@@ -1,20 +1,19 @@
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet} from 'react-native';
 import RootNavigation from './src/navigation/RootNavigation';
+import {AuthProvider} from './src/context/AuthContext';
 
 function App(): React.JSX.Element {
-  
-
   return (
-    <NavigationContainer>
-      <RootNavigation/>
-    </NavigationContainer>
+    <AuthProvider>
+      <NavigationContainer>
+        <RootNavigation />
+      </NavigationContainer>
+    </AuthProvider>
   );
 }
 
-const styles = StyleSheet.create({
- 
-});
+const styles = StyleSheet.create({});
 
 export default App;
