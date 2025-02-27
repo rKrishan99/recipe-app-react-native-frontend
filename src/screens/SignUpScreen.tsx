@@ -29,8 +29,10 @@ const SignUpScreen: React.FC<SignUpScreenProps> = ({navigation}) => {
     if (email && password) {
       const success = await signUp(email, password);
       if (success) {
+        Alert.alert('Success', 'Account created successfully!');
+        navigation.navigate('Login');
       } else {
-        Alert.alert('Sign Up failed!');
+        Alert.alert('Sign Up failed!' );
       }
     } else {
       Alert.alert('Invalid Input!');
